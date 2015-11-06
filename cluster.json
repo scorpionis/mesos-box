@@ -1,0 +1,43 @@
+{
+  "mesos_version" : "*",
+  "cluster_name" : "mesos-cluster",
+  
+  "master_ipbase" : "172.31.0.",
+  "masters" : [
+    {
+      "hostname" : "master1",
+      "mem" : 4096,
+      "cpus" : 4,
+      "run" : ["master", "marathon", "chronos", "zookeeper"]
+    }
+  ],
+  
+  "worker_ipbase" : "172.31.1.",
+  "workers" : [
+    {
+      "hostname" : "worker1",
+      "mem" : 4096,
+      "cpus" : 4,
+      "ports":"[8000-9000, 31000-32000,50000-51000]",
+      "attributes" : "a1:v1.1;a2:v2.1"
+    },    {
+      "hostname" : "worker2",
+      "mem" : 4096,
+      "cpus" : 4,
+      "ports":"[8000-9000, 31000-32000,50000-51000]",
+      "attributes" : "a1:v1.2;a2:v2.2"
+    },    {
+      "hostname" : "worker3",
+      "mem" : 4096,
+      "cpus" : 4,
+      "ports":"[8000-9000, 31000-32000,50000-51000]",
+      "attributes" : "a1:v1.3;a2:v2.3"
+    },    {
+      "hostname" : "worker4",
+      "mem" : 4096,
+      "cpus" : 4,
+      "ports":"[8000-9000, 31000-32000,50000-51000]",
+      "attributes" : "a1:v1.3;a2:v2.3"
+    }
+  ]
+}
