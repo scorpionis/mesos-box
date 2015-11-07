@@ -22,3 +22,9 @@ update-alternatives --config javac
 
 #install mesos marathon chronos
 apt-get -y install mesos marathon chronos curl
+
+#install golang
+apt-get -y install golang
+
+#install docker
+wget -qO- https://get.docker.com/ | sh

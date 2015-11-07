@@ -11,6 +11,10 @@ echo configure-worker...
 #apt-get update
 #apt-get -y install mesos curl
 
+#disable apparmor
+service apparmor stop
+update-rc.d -f apparmor remove
+
 # Disable zookeeper service
 # sudo sh -c "echo manual > /etc/init/zookeeper.override"
 sudo service zookeeper stop

@@ -8,7 +8,7 @@
       "hostname" : "master1",
       "mem" : 4096,
       "cpus" : 4,
-      "run" : ["master", "marathon", "chronos", "zookeeper"]
+      "run" : ["master", "marathon", "chronos", "zookeeper", "kubernetes"]
     }
   ],
   

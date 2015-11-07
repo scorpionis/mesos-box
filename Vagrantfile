@@ -64,14 +64,21 @@ Vagrant.configure(2) do |config|
           end
           zk_id = zk_id + 1
         when "master"
-          print 'Configuring mesos-master on ',master['hostname']
+          print 'Configuring mesos-master on ', master['hostname']
           puts ' ...'
           cfg.vm.provision "shell" do |s|
             s.path = script_name
-            s.args = [master_quorum, zk_ips, node_ip, cluster['cluster_name']]
+            s.args = [master_quorum, zk_ips, node_ip, cluster['cluster_name'], master['hostname']]
           end
-		when "marathon"
-		  print 'Configuring marathon on ',master['hostname']
+        when "kubernetes"
+          print "configuring kubernetes on ", master['hostname']
+          puts '....'
+          cfg.vm.provision "shell" do |s|
+            s.path = script_name
+            s.args = [zk_ips, node_ip, cluster['cluster_name']]
+          end
+	when "marathon"
+	  print 'Configuring marathon on ',master['hostname']
           puts ' ...'
           cfg.vm.provision "shell" do |s|
             s.path = script_name

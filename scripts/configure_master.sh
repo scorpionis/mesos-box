@@ -37,7 +37,7 @@ echo $1 | tee /etc/mesos-master/quorum
 
 # Set /etc/mesos-master/ip and /etc/mesos-master/hostname
 echo $3 | tee /etc/mesos-master/ip
-echo $3 | tee /etc/mesos-master/hostname
+echo $5 | tee /etc/mesos-master/hostname
 echo $3 | tee /etc/mesos-master/advertise_ip
 
 echo "5050" | tee /etc/mesos-master/advertise_port
